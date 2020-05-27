@@ -33,6 +33,7 @@
     animation: fadeUp 0.4s ease-in-out;
     animation-iteration-count: 1;
     -moz-animation-delay: 1s;
+    transition: all .3s ease;
 
     &:hover {
       span {
@@ -40,26 +41,43 @@
       }
     }
     &:active {
-      span {
+      span.stop {
         background: #EC5B2F;
       }
     }
 
     span {
-      width: 1.8rem;
-      height: 1.8rem;
-      border-radius: 0.2rem;
-      background: #000;
-      transition: transform .2s ease;
+      transition: all .3s ease;
+
+      &.stop {
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 0.2rem;
+        background: #000;
+        transition: transform .2s ease;
+      }
+
+      &.play {
+        width: 0;
+        height: 0;
+        border-top: 1.2rem solid transparent;
+        border-left: 2rem solid #EC5B2F;
+        border-bottom: 1.2rem solid transparent;
+        transition: transform .2s ease;
+        margin-left: 0.4rem;
+      }
     }
 
   }
-  
+
   .question {
     position: fixed;
-    top: 3.2rem;
+    top: 8rem;
     color: black;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
+    animation: fadeDown 0.2s ease-in-out;
+    animation-iteration-count: 1;
+    -moz-animation-delay: 1s;
   }
 }

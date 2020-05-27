@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames'
 import './Roulette.scss'
 import fs from 'fs'
 
@@ -178,12 +179,18 @@ class Roulette extends Component {
     ]
 
     this._questionsArray = [
-      'Estamos locos, Lucas?',
-      'Si los gatos arañan, las arañas gatean?',
-      'Y si uno va a China, en los juguetes dice "Hecho aquí"?',
-      'Si el rey se tira un pedo, es un gas noble?',
-      'Si los zombies llegan a tu casa, Zombienvenidos?',
-      'Un terapeuta son 1024 gigapeutas?'
+      'Qué?',
+      'Cómo?',
+      'Cuándo?',
+      'Por qué?',
+      'Dónde?',
+      'Quién?',
+      'Color?',
+      'Género Literario?',
+      'Sonido?',
+      'Sonido?',
+      'Olor?',
+      'Estación del año?'
     ]
 
     this.state = {
@@ -245,7 +252,7 @@ class Roulette extends Component {
     const { currentImage, running, currentQuestion } = this.state
     return (
       <div className='roulette'>
-        <div className='btn' onClick={this.toggleInterval.bind(this)}><span /></div>
+        <div className='btn' onClick={this.toggleInterval.bind(this)}><span className={classNames({stop: running}, {play: !running})} /></div>
         <img src={currentImage} onClick={this.toggleInterval.bind(this)} />
         {!running && <div className='question'>{currentQuestion}</div>}
       </div>
