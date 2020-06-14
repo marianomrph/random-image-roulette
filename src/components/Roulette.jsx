@@ -179,18 +179,7 @@ class Roulette extends Component {
     ]
 
     this._questionsArray = [
-      'Qué?',
-      'Cómo?',
-      'Cuándo?',
-      'Por qué?',
-      'Dónde?',
-      'Quién?',
-      'Color?',
-      'Género Literario?',
-      'Sonido?',
-      'Sonido?',
-      'Olor?',
-      'Estación del año?'
+      '¿?',
     ]
 
     this.state = {
